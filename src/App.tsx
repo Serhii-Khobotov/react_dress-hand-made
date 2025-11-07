@@ -8,7 +8,7 @@ import { ProductList } from "./components/ProductList";
 
 export default function App() {
   return (
-    <Router>
+    <Router basename="/react_dress-hand-made/">
       <div className="min-h-screen flex flex-col bg-amber-50 text-gray-800">
         <Header />
         {/* Main content */}
