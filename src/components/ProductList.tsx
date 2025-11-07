@@ -9,7 +9,7 @@ export function ProductList() {
   return (
     <div className="bg-amber-50">
       <h1 className="text-4xl text-center">Наші товари</h1>
-      <div className="flex">
+      <div className="flex flex-wrap">
         {products.map(product => (
           <ProductCard key={product.id} product={product} />
         ))}
