@@ -5,13 +5,14 @@ import {
   removeFromCart,
   clearCart,
   setCartItems,
+  type CartItem,
 } from "../features/cart/cartSlice";
 import { useLocalStorage } from "../services/useLocalStorage";
 
 export default function CartPage() {
   const { items } = useSelector((state: RootState) => state.cart);
   const dispatch = useDispatch<AppDispatch>();
-  const [cart, setCart] = useLocalStorage("cart", []);
+  const [cart, setCart] = useLocalStorage<CartItem[]>("cart", []);
   const total = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
   const hasLoaded = useRef(false); // ✅ щоб не зберігати, поки не відновили
 
